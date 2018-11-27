@@ -10,7 +10,7 @@ public class Simulator extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(new MyPanel());
 		
-		setSize(515, 500);
+		setSize(515, 515);
 		setVisible(true);
 	}
 	
@@ -19,8 +19,8 @@ public class Simulator extends JFrame
 		public void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
-			g.drawLine(0, 400, 50, 400);
-			g.drawLine(450, 100, 500, 100);
+			g.drawLine(0, 400, 100, 400);
+			g.drawLine(400, 100, 500, 100);
 		}
 	}
 	

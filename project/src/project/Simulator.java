@@ -1,23 +1,31 @@
 package project;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
-class Simulator extends JPanel {
-	public void paint(Graphics g) {
-		g.drawRect(10, 10, 300, 300);
+public class Simulator extends JFrame
+{
+	Simulator() {
+		setTitle("Simulator");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setContentPane(new MyPanel());
+		
+		setSize(515, 500);
+		setVisible(true);
 	}
-	public static void main(String[] args) {
-		JFrame frame = new JFrame("simulator");
-		Container c = frame.getContentPane();
-		
-		Simulator simulator = new Simulator();
-		c.add(simulator, BorderLayout.CENTER);
-		
-		frame.setLocation(0, 0);
-		frame.setPreferredSize(new Dimension(335, 460));
-		frame.pack();
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	class MyPanel extends JPanel
+	{
+		public void paintComponent(Graphics g)
+		{
+			super.paintComponent(g);
+			g.drawLine(0, 400, 50, 400);
+			g.drawLine(450, 100, 500, 100);
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		new Simulator();
 	}
 }

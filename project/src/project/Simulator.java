@@ -21,6 +21,15 @@ public class Simulator extends JFrame
 			super.paintComponent(g);
 			g.drawLine(0, 400, 100, 400);
 			g.drawLine(400, 100, 500, 100);
+			
+			int a = (int)(Math.random()*4 + 1);
+			int b = 300/(a*3);
+			System.out.println(b);			
+
+			for (int i = 1; i < (a+3); i++) {
+				g.drawLine(100, 400, 100, 400-b);
+				g.drawLine(100, 400-b, 100+b, 400-b);
+			}
 		}
 	}
 	
